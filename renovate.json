@@ -4,6 +4,16 @@
   "customManagers": [
     {
       "customType": "regex",
+      "fileMatch": ["\\.github/workflows/.*\\.ya?ml$"],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "astral-sh/uv",
+      "versioningTemplate": "semver",
+      "matchStrings": [
+        "# renovate: datasource=github-releases depName=astral-sh/uv\\s*\\n\\s+version:\\s+\"(?<currentValue>.*?)\""
+      ]
+    },
+    {
+      "customType": "regex",
       "fileMatch": [
         "(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$",
         "(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$"
